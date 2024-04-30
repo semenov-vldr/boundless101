@@ -1,0 +1,23 @@
+.footer
+  background-color: $primary
+  padding: 12px 0 36px
+  @include mobile
+    padding: 12px 0 24px
+
+  &__container
+    display: flex
+    justify-content: space-between
+    gap: 64px
+
+  &__nav
+    font-weight: 600
+    display: grid
+    grid-template-columns: auto auto
+    grid-gap: 32px 72px
+    padding-top: 10px
+    @include mobile
+      grid-template-columns: 1fr
+      grid-gap: 20px
+      text-align: right
+
+

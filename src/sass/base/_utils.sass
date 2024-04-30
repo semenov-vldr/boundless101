@@ -1,0 +1,57 @@
+@import "containers"
+
+.hidden
+  display: none !important
+
+section
+  scroll-margin: 130px
+  @include mobile
+    scroll-margin: 80px
+
+
+.title-section
+  font-size: 36px
+  font-weight: 500
+  margin-bottom: 32px
+  color: $text-dark
+  @include mobile
+    font-size: 24px
+
+.flex-center
+  display: flex
+  align-items: center
+  justify-content: center
+
+
+.button
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  font-weight: 500
+  padding: 8px 32px
+  min-height: 44px
+  min-width: 150px
+  transition: $transition
+  line-height: 1
+  width: fit-content
+  font-size: 18px
+  user-select: none
+  overflow: hidden
+  white-space: nowrap
+  &.button--outline
+    border: 2px solid $text-dark
+
+
+
+.desktop-hidden
+  @media (min-width: $width-mobile)
+    display: none
+
+.mobile-hidden
+  @media (max-width: $width-mobile)
+    display: none
+
+.tablet-hidden
+  @media (min-width: $width-tablet)
+    display: none

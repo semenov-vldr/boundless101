@@ -1,0 +1,40 @@
+.helps
+
+  &__items
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: 40px
+    @include tablet
+      grid-template-columns: repeat(2, 1fr)
+    @include mobile
+      grid-template-columns: 1fr
+      justify-items: right
+
+  &-item
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    gap: 26px
+    max-width: 280px
+
+  &-item__num
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translate(-60%, -50%)
+    line-height: 1
+    font-size: 130px
+    font-weight: 800
+    color: $text-dark
+
+
+  &-item__img
+    position: relative
+    img
+      width: 160px
+      box-shadow: rgba(0, 0, 0, 1) 10px 10px 0 0
+
+  &-item__text
+    font-size: 18px
+    text-align: right
+

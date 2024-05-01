@@ -1,0 +1,78 @@
+.support
+  background-color: #8E8CBE
+  color: $white
+  padding: 75px 0
+  @include mobile
+    padding: 32px 0
+
+  &__container
+    position: relative
+    &::after
+      content: ""
+      position: absolute
+      left: 160px
+      bottom: -40px
+      background-image: url("../img/decor/support.svg")
+      width: 145px
+      height: 228px
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      @include tablet
+        left: 50px
+      @media (max-width: 1000px)
+        display: none
+
+  &__content
+    display: flex
+    column-gap: 64px
+    align-items: center
+    @media (min-width: 1000px)
+      padding-left: 140px
+    @include mobile
+      flex-direction: column-reverse
+      justify-content: center
+      row-gap: 32px
+
+  &__title
+    color: inherit
+    text-wrap: balance
+    @include mobile
+      text-align: center
+
+  &-card
+    background-color: $white
+    color: $text-dark
+    border: 5px solid $yellow
+    padding: 24px 48px
+    display: flex
+    flex-direction: column
+    align-items: center
+    box-shadow: rgba(0, 0, 0, 1) 8px 8px 0 0
+    @include mobile
+      padding: 20px 40px
+    &__title
+      font-size: 25px
+      font-weight: 800
+      white-space: nowrap
+      margin-bottom: 8px
+    &__price
+      color: $secondary
+      font-size: 18px
+      margin-bottom: 24px
+    &__plan
+      color: #494949
+      font-size: 17px
+      margin-bottom: 24px
+    &__button
+      width: 100%
+
+  &__advantages
+    display: flex
+    flex-direction: column
+    gap: 16px
+    &-item
+      list-style-type: disc
+      font-size: 17px
+    @include mobile
+      padding-left: 16px

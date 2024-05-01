@@ -1,0 +1,56 @@
+.contact-us
+  margin-top: 50px
+  @include mobile
+    margin-top: 100px
+
+  &__body
+    position: relative
+    border: 5px dashed $secondary
+    padding: 32px
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    @include mobile
+      padding: 40px 20px
+    &::before,
+    &::after
+      content: ""
+      position: absolute
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+    &::before
+      left: -180px
+      bottom: 130px
+      background-image: url("../img/decor/ship.svg")
+      width: 294px
+      height: 290px
+      @media (max-width: 1350px)
+        bottom: 100px
+      @include tablet
+        top: -10px
+        left: -60px
+        transform: translateY(-100%)
+      @include mobile
+        top: -30px
+        left: -30px
+    &::after
+      right: -95px
+      top: 40%
+      background-image: url("../img/decor/stones.svg")
+      width: 108px
+      height: 52px
+      @include tablet
+        right: -50px
+        transform: scale(0.8)
+      @include mobile
+        display: none
+
+
+  &__text
+    margin-bottom: 32px
+
+  &__button
+    width: 100%
+    max-width: 300px

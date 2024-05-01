@@ -1,6 +1,20 @@
 .helps
+  position: relative
+  @include mobile
+    &::before
+      content: ""
+      position: absolute
+      left: 0
+      top: 50%
+      background-image: url("../img/decor/helps-mob.svg")
+      width: 60px
+      height: 320px
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
 
   &__items
+    position: relative
     display: grid
     grid-template-columns: repeat(4, 1fr)
     gap: 40px
@@ -9,6 +23,26 @@
     @include mobile
       grid-template-columns: 1fr
       justify-items: right
+    @media (min-width: $width-mobile)
+      &::after
+        content: ""
+        position: absolute
+        right: 0
+        top: 280px
+        background-image: url("../img/decor/helps.svg")
+        width: 325px
+        height: 446px
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        @media (max-width: 1440px)
+          transform: scale(0.7)
+        @include tablet
+          top: 470px
+          transform: scale(0.65)
+        @media (max-width: 1050px)
+          top: 420px
+
 
   &-item
     display: flex
@@ -37,4 +71,11 @@
   &-item__text
     font-size: 18px
     text-align: right
+
+
+  &__button
+    width: 300px
+    margin: 100px auto 0
+    @include mobile
+      width: 100%
 

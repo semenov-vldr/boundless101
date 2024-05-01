@@ -1,0 +1,32 @@
+.institutions
+
+  &__list
+    padding-bottom: 20px
+    overflow: visible
+
+  &-card
+    display: flex
+    flex-direction: column
+    gap: 20px
+    border: 5px solid
+    box-shadow: rgba(0, 0, 0, 1) 8px 8px 0 0
+    padding: 24px 48px
+    height: auto
+    @include mobile
+      padding: 12px 24px
+    &:nth-child(1)
+      border-color: $primary
+    &:nth-child(2)
+      border-color: $secondary
+    &:nth-child(3)
+      border-color: $yellow
+
+    &__logo
+      height: 50px
+      width: fit-content
+
+    &__text
+      font-size: 15px
+
+    &__button
+      margin-top: auto

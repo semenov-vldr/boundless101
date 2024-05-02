@@ -1,0 +1,90 @@
+.why-us
+
+  &__content
+    position: relative
+    max-width: 700px
+    border: 5px dashed $primary
+    padding: 28px 64px
+    @include mobile
+      width: fit-content
+      margin: 0 auto
+    &::after,
+    &::before
+      content: ""
+      position: absolute
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+    &::after
+      left: 75px
+      bottom: 0
+      transform: translateY(100%)
+      background-image: url("../img/why-us/wheel.svg")
+      width: 360px
+      height: 300px
+      @media (max-width: 1500px)
+        left: 0px
+      @media (max-width: 1400px)
+        left: -90px
+        transform: scale(0.8) translateY(110%)
+      @media (max-width: 1250px)
+        transform: scale(0.7) translateY(120%)
+      @media (max-width: 1030px)
+        transform: scale(0.6) translateY(100%)
+        left: -120px
+      @include mobile
+        background-image: url("../img/why-us/bottom-mob.svg")
+        width: 230px
+        height: 370px
+        left: 80%
+        bottom: 0
+        transform: translateY(85%)
+
+    &::before
+      right: 0
+      top: 0
+      transform: translate(95%, -65%)
+      background-image: url("../img/why-us/group-5.svg")
+      width: 590px
+      height: 466px
+      z-index: 1
+      @include mobile
+        background-image: url("../img/why-us/top-mob.svg")
+        width: 90px
+        height: 45px
+        top: 8px
+        left: -65px
+        transform: translateY(-100%)
+
+
+
+
+
+
+  &__title
+    text-align: center
+
+  &__list
+    display: flex
+    gap: 32px
+    justify-content: space-between
+    @include mobile
+      flex-direction: column
+      gap: 24px
+
+  &__item
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 16px
+    @include mobile
+      gap: 8px
+
+  &__item-icon
+    width: 55px
+
+  &__item-title
+    font-size: 25px
+    text-align: center
+    @include mobile
+      font-size: 20px

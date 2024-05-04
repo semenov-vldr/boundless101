@@ -231,6 +231,40 @@ mobileNav();
 //   dataSlide_5.classList.add('swiper-slide-active');
 // }
 "use strict";
+
+var customSelectList = document.querySelectorAll(".custom-select");
+if (customSelectList) {
+  customSelectList.forEach(function (customSelect) {
+    var selectBtn = customSelect.querySelector(".select-button");
+    var optionsList = customSelect.querySelectorAll(".select-dropdown li");
+
+    // add click event to select button
+    selectBtn.addEventListener("click", function () {
+      // add/remove active class on the container element
+      customSelect.classList.toggle("active");
+      // update the aria-expanded attribute based on the current state
+      selectBtn.setAttribute("aria-expanded", selectBtn.getAttribute("aria-expanded") === "true" ? "false" : "true");
+    });
+    optionsList.forEach(function (option) {
+      function handler(e) {
+        var clickedValue = this.querySelector("span");
+        // Click Events
+        if (e.type === "click" && e.clientX !== 0 && e.clientY !== 0) {
+          selectBtn.textContent = clickedValue.textContent;
+          customSelect.classList.remove("active");
+        }
+        // Key Events
+        if (e.key === "Enter") {
+          selectBtn.textContent = this.textContent;
+          customSelect.classList.remove("active");
+        }
+      }
+      option.addEventListener("keyup", handler);
+      option.addEventListener("click", handler);
+    });
+  });
+}
+"use strict";
 "use strict";
 
 var swiperInst = document.querySelector('.institutions__list.swiper');

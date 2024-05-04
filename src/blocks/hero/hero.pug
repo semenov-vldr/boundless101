@@ -1,11 +1,29 @@
 section.hero
     .hero__container.container
-        h1.hero__title One-Stop Solution to Studying in your Dream University
-        img.hero__img(src="./assets/img/cover.jpg")
 
-        ul.hero__advantages
-            li learn English online or
-            li match with your perfect university to book a program abroad
-            li get full visa support & a customized adaptation plan
+        .hero__inner
+            h1.hero__title
+                span.one-stop-solution One-Stop Solution to
+                span.studying Studying <br>
+                span.in-your in your <br>
+                span.dream-university Dream University
+
+            ul.hero__advantages
+                li learn English online or
+                li match with your perfect university to book a program abroad
+                li get full visa support & a customized adaptation plan
+
+            form.hero__study.hero-study
+                h2.hero-study__title Book Study Abroad Program
+                include custom-select
+                button.button.button--primary.hero-study__button(type="submit") Continuing Education? Click Here
+
+        picture.hero__img
+            source(srcset=`./assets/img/cover-mob.png` media="(max-width: 767px)")
+            img(src="./assets/img/cover.jpg")
+
+
+
+
 
 

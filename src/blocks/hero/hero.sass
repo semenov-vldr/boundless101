@@ -1,12 +1,121 @@
 .hero
   padding-top: 50px
+  @include mobile
+    padding-top: 130px
 
+  &__container
+    position: relative
+    display: flex
+    @include mobile
+      flex-direction: column
 
+  &__inner
+    margin-top: 200px
+    display: flex
+    flex-direction: column
+    @include mobile
+      margin-top: 0
+      align-items: center
 
   &__title
+    position: absolute
+    z-index: 1
+    top: 25px
     font-size: 100px
+    font-weight: 500
     @include fontSize(32, 64)
     color: $text-dark
     line-height: 1
+    @include mobile
+      top: 0
+      line-height: 1.5
+      transform: translateY(-70%)
+      max-width: 368px
+      text-align: center
+    @media (max-width: 480px)
+      max-width: 300px
+      margin: 0 auto
 
+    .studying
+      color: $white
+      padding-left: 1rem
+      @include mobile
+        color: inherit
+        br
+          display: none
+
+    .dream-university
+      padding-left: 1rem
+      font-weight: 800
+      @include fontSize(32, 52)
+      @include mobile
+        color: $white
+        padding-left: 0
+
+    .in-your
+      font-weight: 800
+      @include fontSize(32, 52)
+      br
+        display: none
+        @include mobile
+          display: block
+
+  &__img
+    margin-left: auto
+    max-width: 600px
+    @include mobile
+      margin: 0 auto
+      order: -1
+
+
+  &__advantages
+    display: flex
+    flex-direction: column
+    gap: 8px
+    @include mobile
+      margin-top: -200px
+      max-width: 350px
+      width: 100%
+      padding-left: 12px
+
+    li
+      position: relative
+      display: flex
+      align-items: center
+      gap: 4px
+      font-size: 20px
+      font-weight: 500
+      text-wrap: balance
+      @include mobile
+        font-size: 17px
+        max-width: 200px
+      &::before
+        content: ""
+        display: inline-block
+        flex: 0 0 10px
+        background-image: url("../img/icons/hero-check.svg")
+        width: 10px
+        height: 8px
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+
+  &-study
+    margin-top: 48px
+    @include mobile
+      margin-top: 64px
+    &__title
+      margin-bottom: 12px
+      font-size: 18px
+      font-weight: 700
+      @include mobile
+        text-align: center
+
+    &__button
+      max-width: 300px
+      width: 100%
+      margin-top: 16px
+      @include mobile
+        max-width: 350px
+        margin: 16px auto 0
 

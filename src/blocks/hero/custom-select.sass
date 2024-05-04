@@ -1,0 +1,86 @@
+.custom-select
+  position: relative
+  width: 100%
+  max-width: 300px
+  font-size: 15px
+  @include mobile
+    max-width: 350px
+    margin: 0 auto
+  &.active
+    .select-dropdown
+      opacity: 1
+      visibility: visible
+      z-index: 2
+    .select-button
+      border-bottom-color: transparent
+      color: rgba($text, 0.5)
+    .select-button::after
+      transform: rotate(180deg)
+  & + & .select-button
+    border-top-color: transparent
+  .select-button
+    position: relative
+    width: 100%
+    font-size: 15px
+    background-color: #fff
+    padding: 8px 12px
+    border: 1px solid #B8B8B8
+    cursor: pointer
+    display: flex
+    justify-content: space-between
+    align-items: center
+    transition: $transition
+    &::after
+      content: ""
+      background-image: url("../img/icons/arrow-select.svg")
+      width: 10px
+      height: 5px
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      transition: $transition
+
+  .select-dropdown
+    position: absolute
+    width: 100%
+    background-color: #fff
+    border: 1px solid #B8B8B8
+    border-top-color: transparent
+    max-height: 200px
+    overflow-y: auto
+    transition: $transition
+    padding-bottom: 8px
+    opacity: 0
+    visibility: hidden
+    li
+      position: relative
+      cursor: pointer
+      display: flex
+      gap: 16px
+      align-items: center
+      label
+        width: 100%
+        padding: 4px 12px
+        cursor: pointer
+        display: flex
+        gap: 1rem
+        align-items: center
+    &::-webkit-scrollbar
+      width: 7px
+    &::-webkit-scrollbar-track
+      background: #f1f1f1
+      border-radius: 25px
+    &::-webkit-scrollbar-thumb
+      background: #ccc
+      border-radius: 25px
+    input
+      &:focus
+        & ~ label
+          background-color: #dfdfdf
+    input[type="radio"]
+      position: absolute
+      left: 0
+      opacity: 0
+  .select-dropdown li:hover,
+  .select-dropdown input:checked ~ label
+    background-color: #f2f2f2

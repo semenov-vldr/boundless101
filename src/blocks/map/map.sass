@@ -3,7 +3,39 @@
     display: none
 
   h2
-    transform: translateY(130%)
+    transform: translateY(140%)
 
-  img
+  &__wrapper
+    position: relative
+    width: fit-content
     margin: 0 auto
+
+  &__flag
+    position: absolute
+    transition: $transition
+    &:hover
+      box-shadow: rgba(0, 0, 0, 1) 4px 4px 0 0
+
+    &--canada
+      top: 38%
+      left: 31%
+
+    &--usa
+      top: 47%
+      left: 24%
+
+    &--brazil
+      bottom: 21%
+      left: 38%
+
+    &--france
+      top: 39%
+      left: 49%
+
+    &--germany
+      top: 44%
+      left: 52%
+
+    &--australia
+      bottom: 12%
+      right: 12%

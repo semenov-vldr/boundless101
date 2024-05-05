@@ -5,7 +5,7 @@
       content: ""
       position: absolute
       left: 0
-      top: 50%
+      top: 45%
       background-image: url("../img/decor/helps-mob.svg")
       width: 60px
       height: 320px
@@ -23,6 +23,7 @@
     @include mobile
       grid-template-columns: 1fr
       justify-items: right
+      margin-right: 36px
     @media (min-width: $width-mobile)
       &::after
         content: ""
@@ -71,6 +72,9 @@
   &-item__text
     font-size: 18px
     text-align: right
+    text-wrap: balance
+    @include mobile
+      max-width: 250px
 
 
   &__button

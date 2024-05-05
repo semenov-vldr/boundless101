@@ -5,7 +5,7 @@ function hideLoader () {
   if (loader) {
     loader.classList.add('hide');
     setTimeout(() => {
-      loader.remove();
+      //loader.remove();
     }, 500);
   }
 };

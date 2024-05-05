@@ -15,7 +15,7 @@
       border-bottom-color: transparent
       color: rgba($text, 0.5)
     .select-button::after
-      transform: rotate(180deg)
+      transform: rotate(0deg)
   & + & .select-button
     border-top-color: transparent
   .select-button
@@ -39,6 +39,7 @@
       background-position: center
       background-repeat: no-repeat
       transition: $transition
+      transform: rotate(180deg)
 
   .select-dropdown
     position: absolute

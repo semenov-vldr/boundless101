@@ -149,3 +149,47 @@ function hideLoader() {
 }
 ;
 window.addEventListener('load', hideLoader);
+"use strict";
+
+window.addEventListener("load", popupLoginHandler);
+function popupLoginHandler() {
+  var popupLogin = document.querySelector(".popup-login");
+  var openPopupLoginBtns = document.querySelectorAll(".js-popup-login-open");
+  if (!popupLogin && !openPopupLoginBtns) return false;
+
+  // Hide Mobile menu when Popup Login is open
+  var headerNav = document.querySelector(".header nav.header__nav");
+
+  // Open Popup Login
+  openPopupLoginBtns.forEach(function (openBtn) {
+    openBtn.addEventListener("click", function () {
+      popupLogin.classList.add("js-popup-open");
+      blockScrollBody();
+      headerNav.classList.remove("js-mobile-nav-open");
+    });
+  });
+
+  // Close Popup Login
+  var closeBtn = popupLogin.querySelector(".popup-login__close");
+  function closePopupLogin() {
+    popupLogin.classList.remove("js-popup-open");
+    popupLogin.querySelector("form").reset();
+    unblockScrollBody();
+  }
+  closeBtn.addEventListener("click", closePopupLogin);
+  document.body.addEventListener('click', function (evt) {
+    if (evt.target === popupLogin) closePopupLogin();
+  });
+
+  // Toggle view password
+  var viewPasswordBtn = popupLogin.querySelector(".login-form__label-eye-toggle");
+  var passwordInput = popupLogin.querySelector(".login-form__label--password input");
+  viewPasswordBtn.addEventListener("click", function () {
+    viewPasswordBtn.classList.toggle("view");
+    if (viewPasswordBtn.classList.contains("view")) {
+      passwordInput.setAttribute("type", "text");
+    } else {
+      passwordInput.setAttribute("type", "password");
+    }
+  });
+}

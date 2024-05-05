@@ -1,0 +1,41 @@
+section.popup-login
+    .popup-login__body
+
+        button.popup-login__close
+            img(src="./assets/img/icons/popup/close.svg" title="close popup")
+
+        h3.popup-login__title Login with
+
+        .popup-login__social-list
+            a.popup-login__social-link(href="##" title="facebook")
+                img(src="./assets/img/icons/popup/facebook.svg" alt="facebook icon")
+            a.popup-login__social-link(href="##" title="twitter")
+                img(src="./assets/img/icons/popup/twitter.svg" alt="twitter icon")
+            a.popup-login__social-link(href="##" title="google")
+                img(src="./assets/img/icons/popup/google.svg" alt="google icon")
+
+
+        form.popup-login__form.login-form
+
+            label.login-form__label
+                span Username
+                input(type="text")
+
+            label.login-form__label.login-form__label--password
+                span Password
+                    a.login-form__forgot(href="" title="forgot?") forgot?
+
+                button.login-form__label-eye-toggle(type="button")
+                input(type="password")
+
+            label
+                input(type="checkbox" value="remember me")
+                span remember me
+
+            button.button.button--primary.login-form__submit(type="submit") Login
+
+
+        .login-form__register-now Not a member?
+            a(href="") Register  now
+
+

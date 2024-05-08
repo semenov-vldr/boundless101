@@ -151,45 +151,61 @@ function hideLoader() {
 window.addEventListener('load', hideLoader);
 "use strict";
 
-window.addEventListener("load", popupLoginHandler);
-function popupLoginHandler() {
-  var popupLogin = document.querySelector(".popup-login");
-  var openPopupLoginBtns = document.querySelectorAll(".js-popup-login-open");
-  if (!popupLogin && !openPopupLoginBtns) return false;
+var popups = {
+  login: {
+    classPopup: ".popup-login",
+    classOpen: ".js-popup-login-open"
+  },
+  register: {
+    classPopup: ".popup-register",
+    classOpen: ".js-popup-register-open"
+  }
+};
+window.addEventListener("load", function () {
+  popupHandler(popups.login.classPopup, popups.login.classOpen);
+  popupHandler(popups.register.classPopup, popups.register.classOpen);
+});
+function popupHandler(classPopup, classOpen) {
+  var popup = document.querySelector(classPopup);
+  var openPopupLoginBtns = document.querySelectorAll(classOpen);
+  if (!popup || !openPopupLoginBtns) return false;
 
-  // Hide Mobile menu when Popup Login is open
+  // Hide Mobile menu when Popup is open
   var headerNav = document.querySelector(".header nav.header__nav");
 
-  // Open Popup Login
+  // Open Popup
   openPopupLoginBtns.forEach(function (openBtn) {
     openBtn.addEventListener("click", function () {
-      popupLogin.classList.add("js-popup-open");
+      document.querySelectorAll(".popup").forEach(function (popup) {
+        return closePopupLogin(popup);
+      });
+      popup.classList.add("js-popup-open");
       blockScrollBody();
       headerNav.classList.remove("js-mobile-nav-open");
     });
   });
 
-  // Close Popup Login
-  var closeBtn = popupLogin.querySelector(".popup-login__close");
-  function closePopupLogin() {
-    popupLogin.classList.remove("js-popup-open");
-    popupLogin.querySelector("form").reset();
+  // Close Popup
+  var closeBtn = popup.querySelector(".popup__close");
+  function closePopupLogin(popup) {
+    popup.classList.remove("js-popup-open");
+    popup.querySelector("form").reset();
     unblockScrollBody();
   }
-  closeBtn.addEventListener("click", closePopupLogin);
+  closeBtn.addEventListener("click", function () {
+    return closePopupLogin(popup);
+  });
   document.body.addEventListener('click', function (evt) {
-    if (evt.target === popupLogin) closePopupLogin();
+    if (evt.target === popup) closePopupLogin(popup);
   });
 
   // Toggle view password
-  var viewPasswordBtn = popupLogin.querySelector(".login-form__label-eye-toggle");
-  var passwordInput = popupLogin.querySelector(".login-form__label--password input");
+  var viewPasswordBtn = popup.querySelector(".form-group-eye-toggle");
+  var passwordInput = popup.querySelector(".form-group--password input");
   viewPasswordBtn.addEventListener("click", function () {
     viewPasswordBtn.classList.toggle("view");
-    if (viewPasswordBtn.classList.contains("view")) {
-      passwordInput.setAttribute("type", "text");
-    } else {
-      passwordInput.setAttribute("type", "password");
-    }
+    var isView = viewPasswordBtn.classList.contains("view");
+    passwordInput.setAttribute("type", "".concat(isView ? "text" : "password"));
   });
 }
+"use strict";

@@ -1,0 +1,60 @@
+.form-group
+  display: flex
+  flex-direction: column
+  gap: 4px
+  span
+    color: $secondary
+  input
+    width: 100%
+    border: 1px solid $text
+    padding: 12px 6px
+
+  input[type="password"]
+    padding-right: 40px
+
+  &--password
+    position: relative
+    .form-group-eye-toggle
+      position: absolute
+      top: 50%
+      right: 6px
+      background-image: url("../img/icons/popup/eye-off.svg")
+      width: 24px
+      height: 24px
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      z-index: 1
+      &.view
+        background-image: url("../img/icons/popup/eye-on.svg")
+
+  &__forgot
+    padding-left: 4px
+    font-size: 15px
+    color: rgba($text, 0.5)
+    text-decoration: underline
+
+.remember-me
+  width: fit-content
+  padding-left: 24px
+  input
+    display: none
+  span
+    position: relative
+    display: flex
+    align-items: center
+    gap: 4px
+  span::before
+    content: ""
+    position: absolute
+    left: -4px
+    top: 55%
+    transform: translate(-100%, -50%)
+    width: 16px
+    height: 16px
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    background-image: url("../img/icons/popup/check-box-rem.svg")
+  input:checked + span::before
+    background-image: url("../img/icons/popup/Tick.svg")

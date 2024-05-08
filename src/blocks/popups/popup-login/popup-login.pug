@@ -1,10 +1,9 @@
-section.popup-login
-    .popup-login__body
+section.popup.popup-login
+    .popup-login__body.popup__body
 
-        button.popup-login__close
-            img(src="./assets/img/icons/popup/close.svg" title="close popup")
+        button.popup__close(type="button")
 
-        h3.popup-login__title Login with
+        h3.popup__title Login with
 
         .popup-login__social-list
             a.popup-login__social-link(href="##" title="facebook")
@@ -17,25 +16,22 @@ section.popup-login
 
         form.popup-login__form.login-form
 
-            label.login-form__label
+            label.form-group
                 span Username
-                input(type="text")
+                input(type="text" autocomplete="off")
 
-            label.login-form__label.login-form__label--password
+            label.form-group.form-group--password
                 span Password
-                    a.login-form__forgot(href="" title="forgot?") forgot?
+                    a.form-group__forgot(href="" title="forgot?") forgot?
+                button.form-group-eye-toggle(type="button")
+                input(type="password" autocomplete="off")
 
-                button.login-form__label-eye-toggle(type="button")
-                input(type="password")
-
-            label
+            label.remember-me
                 input(type="checkbox" value="remember me")
                 span remember me
 
-            button.button.button--primary.login-form__submit(type="submit") Login
+            button.button.button--primary.popup__form-submit.login-form__submit(type="submit") Login
 
 
         .login-form__register-now Not a member?
-            a(href="") Register  now
-
-
+            button.js-popup-register-open(type="button") Register  now

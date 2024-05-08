@@ -1,0 +1,23 @@
+.popup-register
+
+  &__body
+    max-width: 700px
+
+  &__form
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 16px
+    @include mobile
+      grid-template-columns: 1fr
+      grid-gap: 12px
+
+    &-submit
+      grid-column: 1 / -1
+
+  &__login-now
+    color: rgba($text, 0.5)
+    text-align: center
+    margin-top: 26px
+    button
+      padding-left: 4px
+      text-decoration: underline

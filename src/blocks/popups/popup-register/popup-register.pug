@@ -1,0 +1,44 @@
+section.popup.popup-register
+    .popup__body.popup-register__body
+        button.popup__close(type="button")
+
+        h3.popup__title Register Now
+
+        form.popup-register__form
+
+            label.form-group
+                span Username
+                input(type="text" autocomplete="off")
+
+            label.form-group
+                span Email
+                input(type="email" autocomplete="off")
+
+            label.form-group
+                span First name
+                input(type="text" autocomplete="off")
+
+            label.form-group
+                span Last name
+                input(type="text" autocomplete="off")
+
+            label.form-group.form-group--password
+                span Password
+                button.form-group-eye-toggle(type="button")
+                input(type="password" autocomplete="off")
+
+            label.form-group.form-group--password
+                span Confirm password
+                button.form-group-eye-toggle(type="button")
+                input(type="password" autocomplete="off")
+
+            label.remember-me
+                input(type="checkbox" value="remember me")
+                span remember me
+
+            button.button.button--primary.popup__form-submit.popup-register__form-submit(type="submit") Register
+
+        .popup-register__login-now Already have an account?
+            button.js-popup-login-open(type="button") Login now
+
+

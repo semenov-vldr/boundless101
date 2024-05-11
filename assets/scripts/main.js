@@ -209,3 +209,46 @@ function popupHandler(classPopup, classOpen) {
   });
 }
 "use strict";
+"use strict";
+
+var applications = document.querySelectorAll(".application");
+if (applications) {
+  applications.forEach(function (application) {
+    var title = application.querySelector(".application__title");
+    title.addEventListener("click", function () {
+      title.classList.toggle("js-close", !title.classList.contains("js-close"));
+    });
+  });
+}
+"use strict";
+
+var profileMain = document.querySelector(".profile-main");
+if (profileMain) {
+  var tabs = profileMain.querySelectorAll(".profile-main__tabs-item");
+  var contents = profileMain.querySelectorAll(".profile-main__content");
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      tabs.forEach(function (tab) {
+        return tab.classList.remove("js-active");
+      });
+      tab.classList.add("js-active");
+      var dataTab = tab.dataset.tab;
+      contents.forEach(function (cont) {
+        return cont.classList.add("js-hidden");
+      });
+      var content = profileMain.querySelector("[data-cont='".concat(dataTab, "']"));
+      content.classList.remove("js-hidden");
+    });
+  });
+}
+"use strict";
+
+var profileMenu = document.querySelector(".profile-menu");
+if (profileMenu) {
+  var navLinks = profileMenu.querySelectorAll(".profile-menu__nav-link");
+  navLinks.forEach(function (link) {
+    if (link.href === window.location.href) {
+      link.classList.add("js-active");
+    }
+  });
+}

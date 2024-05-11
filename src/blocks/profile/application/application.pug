@@ -1,0 +1,41 @@
+.application-wrap
+
+    span.application-header Application you applied for
+
+    // Application
+    section.application
+        h2.application__title.js-close San Francisco, ESL program
+
+        form.application__form.application-form
+
+            label.application-form__group
+                span.application-form__label High school diploma*
+                input(type="file" name="High school diploma" required)
+                span.application-form__upload Upload here
+
+            label.application-form__group
+                span.application-form__label Academic degree
+                input(type="file" name="Academic degree")
+                span.application-form__upload Upload here
+
+            label.application-form__group
+                span.application-form__label Passport copy*
+                input(type="file" name="Passport copy" required)
+                span.application-form__upload Upload here
+
+            label.application-form__group
+                span.application-form__label Bank statement*
+                input(type="file" name="Bank statement" required)
+                span.application-form__upload Upload here
+
+            label.application-form__group
+                span.application-form__label Sponsor support letter
+                input(type="file" name="Sponsor support letter")
+                span.application-form__upload Upload here
+
+            .application-form__actions
+                button.button.button--outline(type="button") Cancel
+                button.button.button--primary(type="submit") Save
+
+
+

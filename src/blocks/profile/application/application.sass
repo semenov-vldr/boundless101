@@ -1,0 +1,89 @@
+.application-wrap
+  display: flex
+  flex-direction: column
+  gap: 16px
+
+.application-header
+  font-size: 18px
+  font-weight: 600
+
+.application
+  background-color: $white
+  padding: 8px 24px
+
+  &__title
+    position: relative
+    display: flex
+    align-items: center
+    gap: 12px
+    font-size: 25px
+    font-weight: 800
+    color: $text-dark
+    cursor: pointer
+    &::before
+      content: ""
+      display: inline-block
+      background-image: url("../img/icons/arrow-top-bold.svg")
+      width: 14px
+      height: 7px
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+    &.js-close ~ .application-form
+      display: none
+    &.js-close::before
+      transform: rotate(180deg)
+
+  &-form
+    padding-top: 36px
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 40px 32px
+    @include mobile
+      grid-template-columns: 1fr
+      grid-gap: 32px
+
+    &__group
+      display: flex
+      flex-direction: column
+      gap: 4px
+      &:hover .application-form__upload
+        background-color: #F3F3F3
+        border-color: $secondary
+    &__label
+      color: $secondary
+      font-size: 18px
+    input[type="file"]
+      display: none
+    &__upload
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: center
+      gap: 8px
+      font-size: 18px
+      font-weight: 600
+      width: 100%
+      padding: 12px 16px
+      border: 1px dashed $text-dark
+      transition: $transition
+      &::after
+        content: ""
+        display: inline-block
+        background-image: url("../img/icons/upload.svg")
+        width: 24px
+        height: 24px
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+
+    &__actions
+      grid-column: 1 / -1
+      display: flex
+      align-items: center
+      gap: 8px
+      justify-content: right
+      @media (max-width: 480px)
+        justify-content: center
+      button
+        min-width: 120px

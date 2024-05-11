@@ -1,0 +1,25 @@
+.profile-grid
+  @include mobile
+    margin-top: 24px
+
+  &__container
+    display: grid
+    grid-template-columns: 215px 1fr
+    grid-column-gap: 32px
+    min-height: 700px
+    @include mobile
+      grid-template-columns: 1fr
+      min-height: auto
+    & > .banner-support
+      @media (min-width: $width-mobile)
+        display: none
+
+  &__content
+    display: flex
+    flex-direction: column
+    gap: 40px
+    margin: 16px 0 40px
+    @include mobile
+      gap: 24px
+      & > .banner-support
+          display: none

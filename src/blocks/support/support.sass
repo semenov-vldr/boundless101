@@ -1,13 +1,12 @@
 .support
-  background-color: #8E8CBE
-  color: $white
   padding: 75px 0
   @include mobile
     padding: 32px 0
 
-  &__container
-    position: relative
-    &::after
+  &.support--index
+    background-color: #8E8CBE
+    color: $white
+    .support__container::after
       content: ""
       position: absolute
       left: 160px
@@ -22,17 +21,43 @@
         left: 50px
       @media (max-width: 1000px)
         display: none
+    .support__content
+      column-gap: 64px
+      @media (min-width: 1000px)
+        padding-left: 140px
+      @include mobile
+        flex-direction: column-reverse
+        row-gap: 32px
+        justify-content: center
+
+    .support-card
+      border-color: $yellow
+
+
+  &.support--profile
+    background-color: $white
+    padding: 40px
+    @include mobile
+      padding: 16px
+    .support-card
+      border-color: $secondary
+    .support__title
+      color: $text-dark
+    .support__content
+      column-gap: 72px
+      @include tablet
+        flex-direction: column
+        row-gap: 32px
+        justify-content: center
+
+
+
+  &__container
+    position: relative
 
   &__content
     display: flex
-    column-gap: 64px
     align-items: center
-    @media (min-width: 1000px)
-      padding-left: 140px
-    @include mobile
-      flex-direction: column-reverse
-      justify-content: center
-      row-gap: 32px
 
   &__title
     color: inherit
@@ -40,10 +65,12 @@
     @include mobile
       text-align: center
 
+
+
   &-card
     background-color: $white
     color: $text-dark
-    border: 5px solid $yellow
+    border: 5px solid
     padding: 24px 48px
     display: flex
     flex-direction: column
@@ -51,6 +78,8 @@
     box-shadow: rgba(0, 0, 0, 1) 8px 8px 0 0
     @include mobile
       padding: 20px 40px
+    @media (max-width: 370px)
+      padding: 12px 24px
     &__title
       font-size: 25px
       font-weight: 800

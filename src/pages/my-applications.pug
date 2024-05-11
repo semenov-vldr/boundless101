@@ -1,0 +1,13 @@
+extends ../layouts/profile
+
+block variables
+  - var title = "Boundless101 | My applications"
+
+block content
+    .profile-grid
+        .profile-grid__container.container
+            include ../blocks/profile/banner-support/banner-support
+            include ../blocks/profile/profile-menu/profile-menu
+            .profile-grid__content
+                include ../blocks/profile/banner-support/banner-support
+                include ../blocks/profile/application/application

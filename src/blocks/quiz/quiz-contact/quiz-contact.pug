@@ -1,0 +1,32 @@
+section.quiz.quiz--contact
+    .quiz__container.container
+
+        .quiz__body
+
+            h1.quiz__title Let’s get started
+
+            form.quiz__contact-form
+
+                label.form-group
+                    span First name
+                    input(type="text" autocomplete="off" name="First name" minlength="2" maxlength="20" required)
+
+                label.form-group
+                    span Last name
+                    input(type="text" autocomplete="off" name="Last name" minlength="2" maxlength="20" required)
+
+                label.form-group
+                    span Phone
+                    input(type="tel" autocomplete="off" name="Phone" value="+" inputmode="tel" required)
+
+                label.form-group
+                    span Email
+                    input(type="email" autocomplete="off" name="Email" inputmode="email")
+
+                button.button.button--primary.quiz__contact-form-submit(type="submit" disabled) Continue
+
+
+        .quiz__success
+            h2 Thank you for your request. <br> Our specialist will contact you within 24 hours!
+            img(src="./assets/img/decor/contact-success.svg" width="400")
+

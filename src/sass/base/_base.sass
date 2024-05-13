@@ -16,22 +16,25 @@ body
   background-color: $bg
 
 
-main.main
+main
   display: flex
   flex-direction: column
   flex-grow: 1
-  gap: 150px
-  padding-bottom: 160px
-  @media (max-width: $width-tablet)
-    padding-bottom: 120px
-    gap: 120px
-  @media (max-width: $width-mobile)
-    gap: 100px
-    padding-bottom: 100px
+
+  &.main
+    gap: 150px
+    padding-bottom: 160px
+    @media (max-width: $width-tablet)
+      padding-bottom: 120px
+      gap: 120px
+    @media (max-width: $width-mobile)
+      gap: 100px
+      padding-bottom: 100px
 
 
-main.main-profile
-  display: flex
-  flex-direction: column
-  flex-grow: 1
-  background-color: #F3F3F3
+  &.main-profile
+    background-color: #F3F3F3
+
+  &.page-inner
+    padding-bottom: 52px
+

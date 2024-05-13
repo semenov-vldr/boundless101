@@ -252,3 +252,20 @@ if (profileMenu) {
     }
   });
 }
+"use strict";
+
+var quizContact = document.querySelector(".quiz.quiz--contact");
+if (quizContact) {
+  var contactForm = document.querySelector(".quiz__contact-form");
+  var inputs = quizContact.querySelectorAll("input:required");
+  contactForm.addEventListener("change", function () {
+    var isEmptyInputs = Array.from(inputs).some(function (input) {
+      return !input.value;
+    });
+    if (!isEmptyInputs) {
+      console.log("valid");
+    } else {
+      console.log("dgewg");
+    }
+  });
+}

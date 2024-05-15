@@ -50,9 +50,31 @@ section.detail-course
                         .custom-select
                             button.select-button(type="button")
                             ul.select-dropdown
-                                +select-item("General English 16 / 18", "Course")
-                                +select-item("General English 2", "Course")
-                                +select-item("General English 3", "Course")
+                                +select-item("General English 16 / 18", "course")
+                                +select-item("General English 2", "course")
+                                +select-item("General English 3", "course")
+
+
+                .detail-course-form__group
+                    label
+                        span.detail-course-form__label Choose the duration of the course
+                        .custom-select
+                            button.select-button(type="button")
+                            ul.select-dropdown
+                                +select-item("8 weeks", "duration")
+                                +select-item("12 weeks", "duration")
+                                +select-item("15 weeks", "duration")
+
+
+                .detail-course-form__group
+                    label
+                        span.detail-course-form__label Accommodation
+                        .custom-select
+                            button.select-button(type="button")
+                            ul.select-dropdown
+                                +select-item("Family accommodations, breakfast meals", "accommodation")
+                                +select-item("Family accommodations, breakfast meals", "accommodation")
+                                +select-item("Family accommodations, breakfast meals", "accommodation")
 
 
 

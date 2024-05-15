@@ -5,22 +5,29 @@
     display: grid
     grid-template-columns: 1.5fr 1fr
     grid-column-gap: 64px
+    @include tablet
+      grid-template-columns: 1fr
+      grid-gap: 24px
 
   &__title
     font-size: 36px
     font-weight: 500
     color: $text-dark
     margin-bottom: 16px
+    @include tablet
+      grid-row: 2 / 3
 
   &__tabs
     grid-column: 1 / 2
     display: flex
-    gap: 32px
+    gap: 16px
     align-items: center
     justify-content: space-between
     padding-bottom: 12px
     border-bottom: 1px solid $text
     margin-bottom: 16px
+    @include tablet
+      grid-row: 3 / 4
 
   &__tab
     cursor: pointer
@@ -39,6 +46,9 @@
     flex-direction: column
     gap: 24px
     color: #000
+    @include tablet
+      grid-row: 4 / 5
+      grid-column: 1 / -1
 
     h2
       font-size: 25px
@@ -67,6 +77,10 @@
     max-width: 440px
     box-shadow: rgba(#000, 1) 10px 10px
     margin-left: auto
+    @include tablet
+      grid-row: 1 / 2
+      grid-column: 1 / -1
+      margin-left: 0
 
 
   &-form
@@ -77,7 +91,11 @@
     flex-direction: column
     gap: 36px
     width: 100%
+    max-width: 450px
     //grid-row: 2 / span 2
+    @include tablet
+      grid-row: 5 / 6
+      grid-column: 1 / -1
 
     &__caption
       font-size: 36px
@@ -89,10 +107,13 @@
       @include mobile
         font-size: 25px
         font-weight: 800
-        margin-bottom: 24px
         span
           font-size: 17px
           font-weight: 500
+
+    &__body
+      display: grid
+      gap: 16px
 
     &__group
       label
@@ -100,10 +121,15 @@
         flex-direction: column
         gap: 2px
 
+    &__label
+      color: $secondary
+
     &__button
       width: 100%
       max-width: 300px
       margin: 0 auto
+
+
 
 
   .custom-select

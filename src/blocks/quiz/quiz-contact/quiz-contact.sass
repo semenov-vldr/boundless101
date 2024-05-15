@@ -10,6 +10,12 @@
     background-repeat: no-repeat
     min-height: 50vh
 
+  &__body.js-hidden
+    display: none
+
+  &__body.js-hidden ~ .quiz__success
+    display: block
+
   &__title
     font-size: 36px
     text-align: center

@@ -17,7 +17,7 @@ section.quiz.quiz--contact
 
                 label.form-group
                     span Phone
-                    input(type="tel" autocomplete="off" name="Phone" value="+" inputmode="tel" required)
+                    input(type="tel" autocomplete="off" name="Phone" value="+" inputmode="tel" minlength="8" required)
 
                 label.form-group
                     span Email
@@ -29,4 +29,3 @@ section.quiz.quiz--contact
         .quiz__success
             h2 Thank you for your request. <br> Our specialist will contact you within 24 hours!
             img(src="./assets/img/decor/contact-success.svg" width="400")
-

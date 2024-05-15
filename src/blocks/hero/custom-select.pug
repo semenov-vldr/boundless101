@@ -2,41 +2,16 @@
     button.select-button(type="button") Where do you want to study
 
     ul.select-dropdown
-        li
-            label
-                span Fort Lauderdale
-                input(type='radio', name='where-study' value="Fort Lauderdale")
+        +select-item("Fort Lauderdale", "where-study")
+        +select-item("Boston", "where-study")
+        +select-item("San Francisco", "where-study")
 
-        li
-            label
-                span Boston
-                input(type='radio', name='where-study' value="Boston")
-
-        li
-            label
-                span San Francisco
-                input(type='radio', name='where-study' value="San Francisco")
 
 .custom-select
     button.select-button(type="button") How long do you want to study?
 
     ul.select-dropdown
-        li
-            label
-                span Not sure yet
-                input(type='radio', name='how-long' value="Not sure yet")
-
-        li
-            label
-                span May 2024
-                input(type='radio', name='how-long' value="May 2024")
-
-        li
-            label
-                span June 2024
-                input(type='radio', name='how-long' value="June 2024")
-
-        li
-            label
-                span July 2024
-                input(type='radio', name='how-long' value="July 2024")
+        +select-item("Not sure yet", "how-long")
+        +select-item("May 2024", "how-long")
+        +select-item("June 2024", "how-long")
+        +select-item("July 2024", "how-long")

@@ -1,7 +1,6 @@
 .custom-select
   position: relative
   width: 100%
-  max-width: 300px
   font-size: 15px
   @include mobile
     max-width: 350px
@@ -30,6 +29,7 @@
     justify-content: space-between
     align-items: center
     transition: $transition
+    min-height: 44px
     &::after
       content: ""
       background-image: url("../img/icons/arrow-select.svg")
@@ -40,6 +40,8 @@
       background-repeat: no-repeat
       transition: $transition
       transform: rotate(180deg)
+      margin-left: auto
+
 
   .select-dropdown
     position: absolute
@@ -65,7 +67,6 @@
         cursor: pointer
         display: flex
         gap: 1rem
-        align-items: center
     &::-webkit-scrollbar
       width: 7px
     &::-webkit-scrollbar-track

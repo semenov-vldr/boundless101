@@ -1,0 +1,110 @@
+.detail-course
+  margin-top: 52px
+
+  &__container
+    display: grid
+    grid-template-columns: 1.5fr 1fr
+    grid-column-gap: 64px
+
+  &__title
+    font-size: 36px
+    font-weight: 500
+    color: $text-dark
+    margin-bottom: 16px
+
+  &__tabs
+    grid-column: 1 / 2
+    display: flex
+    gap: 32px
+    align-items: center
+    justify-content: space-between
+    padding-bottom: 12px
+    border-bottom: 1px solid $text
+    margin-bottom: 16px
+
+  &__tab
+    cursor: pointer
+    font-size: 18px
+    font-weight: 600
+    transition: $transition
+    &.js-active,
+    &:hover
+      color: $secondary
+
+
+
+  &__body
+    grid-column: 1 / 2
+    display: flex
+    flex-direction: column
+    gap: 24px
+    color: #000
+
+    h2
+      font-size: 25px
+    span, p, ul, ol
+      font-size: 17px
+      font-weight: 500
+    ul, ol
+      display: flex
+      flex-direction: column
+      padding-left: 26px
+      gap: 4px
+    ul li
+      list-style-type: disc
+
+  &__section
+    display: flex
+    flex-direction: column
+    gap: 8px
+
+
+  &__main-photo
+    grid-column: 2 / 3
+    grid-row: 1 / span 3
+    height: 230px
+    width: 100%
+    max-width: 440px
+    box-shadow: rgba(#000, 1) 10px 10px
+    margin-left: auto
+
+
+  &-form
+    grid-column: 2 / 3
+    border: 4px solid $primary
+    padding: 24px 12px
+    display: flex
+    flex-direction: column
+    gap: 36px
+    width: 100%
+    //grid-row: 2 / span 2
+
+    &__caption
+      font-size: 36px
+      font-weight: 500
+      color: $text-dark
+      text-align: center
+      span
+        color: rgba(#282727, 0.6)
+      @include mobile
+        font-size: 25px
+        font-weight: 800
+        margin-bottom: 24px
+        span
+          font-size: 17px
+          font-weight: 500
+
+    &__group
+      label
+        display: flex
+        flex-direction: column
+        gap: 2px
+
+    &__button
+      width: 100%
+      max-width: 300px
+      margin: 0 auto
+
+
+  .custom-select
+    max-width: 420px

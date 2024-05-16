@@ -55,15 +55,13 @@ section
       box-shadow: rgba(0, 0, 0, 1) 4px 4px 0 0
 
 
+.mobile-hidden
+  @include mobile
+    display: none
 
-.desktop-hidden
+.mobile-visible
   @media (min-width: $width-mobile)
     display: none
 
-.mobile-hidden
-  @media (max-width: $width-mobile)
-    display: none
 
-.tablet-hidden
-  @media (min-width: $width-tablet)
-    display: none
+

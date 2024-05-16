@@ -5,7 +5,8 @@ section.detail-course
 
         ul.detail-course__tabs
             li.detail-course__tab.js-active(data-tab="description") Description
-            li.detail-course__tab(data-tab="courses") Courses and Costs
+            li.detail-course__tab.mobile-hidden(data-tab="courses") Courses and Costs
+            li.detail-course__tab.mobile-visible(data-tab="courses") Costs
             li.detail-course__tab(data-tab="photos") Photos
             li.detail-course__tab(data-tab="reviews") Reviews
 
@@ -55,6 +56,11 @@ section.detail-course
                                 +select-item("General English 3", "course")
 
 
+                label.form-group
+                    span When do you want to start?
+                    input(type="date" autocomplete="off" name="date")
+
+
                 .detail-course-form__group
                     label
                         span.detail-course-form__label Choose the duration of the course
@@ -76,12 +82,28 @@ section.detail-course
                                 +select-item("Family accommodations, breakfast meals", "accommodation")
                                 +select-item("Family accommodations, breakfast meals", "accommodation")
 
+                .detail-course-form__group-name
+                    label.form-group
+                        span First name
+                        input(type="text" autocomplete="off" name="First name" minlength="2" maxlength="20" required)
 
+                    label.form-group
+                        span Last name
+                        input(type="text" autocomplete="off" name="Last name" minlength="2" maxlength="20" required)
+
+
+                label.form-group
+                    span Email
+                    input(type="email" autocomplete="off" name="Email" inputmode="email")
+
+                label.form-group
+                    span Phone
+                    input(type="tel" autocomplete="off" name="Phone" value="+" inputmode="tel" minlength="8" required)
 
 
 
             .detail-course-form__footer
-                .detail-course-form__small Enrolment fee
+                .detail-course-form__enrolment-fee  Enrolment fee
                     span $150
 
                 .detail-course-form__total Total due now

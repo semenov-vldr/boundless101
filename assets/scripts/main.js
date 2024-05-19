@@ -23,6 +23,8 @@ function toggleBlockScrollBody() {
 }
 ;
 "use strict";
+
+AOS.init();
 "use strict";
 
 var images = document.querySelectorAll("img");

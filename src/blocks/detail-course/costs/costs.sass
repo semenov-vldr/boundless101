@@ -1,0 +1,48 @@
+.detail-course__body[data-tab="costs"]
+  gap: 36px
+  @include mobile
+    gap: 24px
+
+  .detail-course__table
+    overflow: auto
+    table
+      text-align: center
+      color: $text
+      width: 100%
+    table, tr, td
+      border: 1px solid $secondary
+      border-collapse: collapse
+      padding: 12px 10px
+      text-wrap: balance
+    table td
+      font-size: 18px
+      font-weight: 600
+    table th
+      font-size: 18px
+      font-weight: 600
+      text-align: left
+      padding: 12px 10px
+
+    table tbody tr:nth-child(1)
+      th
+        font-weight: 800
+        font-size: 25px
+        min-width: 280px
+        @include mobile
+          min-width: 250px
+      td
+        font-size: 15px
+        font-weight: 400
+        line-height: 1.4
+    table th small
+      display: block
+      font-size: 15px
+      line-height: 1.4
+    table td small
+      display: block
+      font-size: 9px
+      font-weight: 600
+      line-height: 1.4
+
+
+

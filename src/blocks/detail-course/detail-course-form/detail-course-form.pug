@@ -1,0 +1,70 @@
+form.detail-course__form.detail-course-form(action="" method="post")
+    h3.detail-course-form__caption from $215 <span> per week </span>
+
+    .detail-course-form__body
+
+        .detail-course-form__group
+            label
+                span.detail-course-form__label Course
+                .custom-select
+                    button.select-button(type="button")
+                    ul.select-dropdown
+                        +select-item("General English 16 / 18", "course")
+                        +select-item("General English 2", "course")
+                        +select-item("General English 3", "course")
+
+
+        label.form-group
+            span When do you want to start?
+            input(type="date" autocomplete="off" name="date")
+
+
+        .detail-course-form__group
+            label
+                span.detail-course-form__label Choose the duration of the course
+                .custom-select
+                    button.select-button(type="button")
+                    ul.select-dropdown
+                        +select-item("8 weeks", "duration")
+                        +select-item("12 weeks", "duration")
+                        +select-item("15 weeks", "duration")
+
+
+        .detail-course-form__group
+            label
+                span.detail-course-form__label Accommodation
+                .custom-select
+                    button.select-button(type="button")
+                    ul.select-dropdown
+                        +select-item("Family accommodations, breakfast meals", "accommodation")
+                        +select-item("Family accommodations, breakfast meals", "accommodation")
+                        +select-item("Family accommodations, breakfast meals", "accommodation")
+
+        .detail-course-form__group-name
+            label.form-group
+                span First name
+                input(type="text" autocomplete="off" name="First name" minlength="2" maxlength="20" required)
+
+            label.form-group
+                span Last name
+                input(type="text" autocomplete="off" name="Last name" minlength="2" maxlength="20" required)
+
+
+        label.form-group
+            span Email
+            input(type="email" autocomplete="off" name="Email" inputmode="email")
+
+        label.form-group
+            span Phone
+            input(type="tel" autocomplete="off" name="Phone" value="+" inputmode="tel" minlength="8" required)
+
+
+
+    .detail-course-form__footer
+        .detail-course-form__enrolment-fee  Enrolment fee
+            span $150
+
+        .detail-course-form__total Total due now
+            span $150
+
+    button.button.button--primary.detail-course-form__button(type="submit") Book

@@ -10,105 +10,10 @@ section.detail-course
             li.detail-course__tab(data-tab="photos") Photos
             li.detail-course__tab(data-tab="reviews") Reviews
 
-        .detail-course__body(data-tab="description")
-            p A city with a rich history, world-famous university traditions and «visiting cards», does not stop attracting foreign students. Boston, located in the heart of the financial district, offers its students a dynamic, multinational environment. A two-minute walk to the metro opens up the city, where the old streets and lush greenery are unusually unique and reveal beautiful pavement, cobblestone and unforgettable tourist attractions.
-
-            .detail-course__section
-                h2 Program Length
-                p Up to 52 weeks
-
-            .detail-course__section
-                h2 Accommodation options:
-                ul
-                    li Family residence
-                    li Student dormitory
-
-            .detail-course__section
-                h2 Details
-                ul
-                    li Located in the historic Bedford Building, Financial District
-                    li Customized design in loft style
-                    li 9 audiences
-                    li Large and cosy student lounge area
-                    li Interactive technology
-                    li Free Wi-Fi
-                    li Public transport availability
-                    li Large parking for a fee
-                    li Cafes, restaurants and shops are within walking distance.
+        //include description/description
+        include costs/costs
 
 
         img.detail-course__main-photo(src="https://www.robertmringphotography.com/images/400/L1030836_LQ_RMR_September_2015-Edit_RMRing.jpg")
 
-
-        form.detail-course__form.detail-course-form(action="" method="post")
-            h3.detail-course-form__caption from $215 <span> per week </span>
-
-            .detail-course-form__body
-
-                .detail-course-form__group
-                    label
-                        span.detail-course-form__label Course
-                        .custom-select
-                            button.select-button(type="button")
-                            ul.select-dropdown
-                                +select-item("General English 16 / 18", "course")
-                                +select-item("General English 2", "course")
-                                +select-item("General English 3", "course")
-
-
-                label.form-group
-                    span When do you want to start?
-                    input(type="date" autocomplete="off" name="date")
-
-
-                .detail-course-form__group
-                    label
-                        span.detail-course-form__label Choose the duration of the course
-                        .custom-select
-                            button.select-button(type="button")
-                            ul.select-dropdown
-                                +select-item("8 weeks", "duration")
-                                +select-item("12 weeks", "duration")
-                                +select-item("15 weeks", "duration")
-
-
-                .detail-course-form__group
-                    label
-                        span.detail-course-form__label Accommodation
-                        .custom-select
-                            button.select-button(type="button")
-                            ul.select-dropdown
-                                +select-item("Family accommodations, breakfast meals", "accommodation")
-                                +select-item("Family accommodations, breakfast meals", "accommodation")
-                                +select-item("Family accommodations, breakfast meals", "accommodation")
-
-                .detail-course-form__group-name
-                    label.form-group
-                        span First name
-                        input(type="text" autocomplete="off" name="First name" minlength="2" maxlength="20" required)
-
-                    label.form-group
-                        span Last name
-                        input(type="text" autocomplete="off" name="Last name" minlength="2" maxlength="20" required)
-
-
-                label.form-group
-                    span Email
-                    input(type="email" autocomplete="off" name="Email" inputmode="email")
-
-                label.form-group
-                    span Phone
-                    input(type="tel" autocomplete="off" name="Phone" value="+" inputmode="tel" minlength="8" required)
-
-
-
-            .detail-course-form__footer
-                .detail-course-form__enrolment-fee  Enrolment fee
-                    span $150
-
-                .detail-course-form__total Total due now
-                    span $150
-
-            button.button.button--primary.detail-course-form__button(type="submit") Book
-
-
+        include detail-course-form/detail-course-form

@@ -4,4 +4,20 @@ block variables
   - var title = "Boundless101 | Boston"
 
 block content
-    include ../blocks/detail-course/detail-course
+
+    section.detail-course.detail-course--tabs
+        .detail-course__container.container
+
+            h1.detail-course__title Boston
+
+            include ../blocks/detail-course/tabs/tabs
+
+            include ../blocks/detail-course/description/description-boston
+            include ../blocks/detail-course/costs/costs-boston
+            include ../blocks/detail-course/photos/photos-boston
+            include ../blocks/detail-course/reviews/reviews-boston
+
+            img.detail-course__main-photo(src="./assets/img/photos/main/boston.jpg")
+
+            include ../blocks/detail-course/detail-course-form/detail-course-form
+

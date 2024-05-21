@@ -1,0 +1,22 @@
+extends ../layouts/page-inner
+
+block variables
+  - var title = "Boundless101 | San Francisco"
+
+block content
+
+    section.detail-course.detail-course--tabs
+        .detail-course__container.container
+
+            h1.detail-course__title San Francisco
+
+            include ../blocks/detail-course/tabs/tabs
+
+            include ../blocks/detail-course/description/description-san-francisco
+            include ../blocks/detail-course/costs/costs-san-francisco
+            include ../blocks/detail-course/photos/photos-san-francisco
+            include ../blocks/detail-course/reviews/reviews-san-francisco
+
+            img.detail-course__main-photo(src="./assets/img/photos/main/san-francisco.jpg")
+
+            include ../blocks/detail-course/detail-course-form/detail-course-form

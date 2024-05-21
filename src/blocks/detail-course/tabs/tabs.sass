@@ -1,0 +1,21 @@
+.detail-course
+
+  &__tabs
+      grid-column: 1 / 2
+      display: flex
+      gap: 16px
+      align-items: center
+      justify-content: space-between
+      padding-bottom: 12px
+      border-bottom: 1px solid $text
+      @include tablet
+        grid-row: 3 / 4
+
+  &__tab
+    cursor: pointer
+    font-size: 18px
+    font-weight: 600
+    transition: $transition
+    &.js-active,
+    &:hover
+      color: $secondary

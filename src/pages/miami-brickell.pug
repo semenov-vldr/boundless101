@@ -1,0 +1,22 @@
+extends ../layouts/page-inner
+
+block variables
+  - var title = "Boundless101 | Miami Brickell"
+
+block content
+
+    section.detail-course.detail-course--tabs
+        .detail-course__container.container
+
+            h1.detail-course__title Miami Brickell
+
+            include ../blocks/detail-course/tabs/tabs
+
+            include ../blocks/detail-course/description/description-miami-brickell
+            include ../blocks/detail-course/costs/costs-miami-brickell
+            include ../blocks/detail-course/photos/photos-miami-brickell
+            include ../blocks/detail-course/reviews/reviews-miami-brickell
+
+            img.detail-course__main-photo(src="./assets/img/photos/main/miami-brickell.jpg")
+
+            include ../blocks/detail-course/detail-course-form/detail-course-form

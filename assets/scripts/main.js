@@ -35,14 +35,13 @@ if (images) {
 }
 "use strict";
 
-var detailCourse = document.querySelector(".detail-course.detail-course--tabs");
-if (detailCourse) {
-  var tabs = detailCourse.querySelectorAll(".detail-course__tab[data-tab]");
-  var bodyList = detailCourse.querySelectorAll(".detail-course__body[data-tab]");
-  tabs.forEach(function (tab) {
+var detailCourseTabs = document.querySelectorAll(".detail-course__tab[data-tab]");
+if (detailCourseTabs) {
+  var bodyList = document.querySelectorAll(".detail-course__body[data-tab]");
+  detailCourseTabs.forEach(function (tab) {
     var dataTab = tab.dataset.tab;
     tab.addEventListener("click", function () {
-      tabs.forEach(function (tab) {
+      detailCourseTabs.forEach(function (tab) {
         return tab.classList.remove("js-active");
       });
       tab.classList.add("js-active");

@@ -83,11 +83,6 @@ function mobileNav() {
       });
     }
   });
-
-  // window.onscroll = function () {
-  //   header.classList.toggle('js-scroll', window.scrollY > 1);
-  // };
-
   navLinks.forEach(function (navLink) {
     navLink.addEventListener("click", closeMenu);
   });
@@ -289,9 +284,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
-var quizContact = document.querySelector(".quiz.quiz--contact");
+var quizContact = document.querySelector(".quiz.quiz-contact");
 if (quizContact) {
-  var successForm = function successForm() {
+  var successFormContact = function successFormContact() {
     quizBody.classList.add("js-hidden");
     setTimeout(function () {
       quizBody.classList.remove("js-hidden");
@@ -364,12 +359,49 @@ if (quizContact) {
     postData(url, data).then(function (response) {
       if (response.status < 300) {
         console.log("Форма успешно отправлена");
-        successForm();
+        successFormContact();
       } else {
         console.log("Ошибка при отправке формы");
       }
     })["catch"](function () {
       return console.log("Catch Ошибка");
     });
+  });
+}
+"use strict";
+
+// Quiz Study
+var quizStudy = document.getElementById("quiz-study");
+if (quizStudy) {
+  var quizDisplay = function quizDisplay(questionCount) {
+    quizQuestionsItems.forEach(function (question) {
+      return question.classList.add("hidden");
+    });
+    btnNext.disabled = true;
+    if (questionCount < quizQuestionsItems.length) {
+      quizQuestionsItems[questionCount].classList.remove("hidden");
+    } else {
+      btnNext.disabled = false;
+      results.classList.remove("hidden");
+    }
+  };
+  var handleQuestion = function handleQuestion(questionNumber) {
+    var answersQuestions = Array.from(quizQuestionsItems[questionNumber].querySelectorAll("input[type='radio']"));
+    var isSelected = answersQuestions.some(function (input) {
+      return input.checked;
+    });
+    btnNext.disabled = !isSelected;
+  };
+  var questions = quizStudy.querySelector(".quiz__questions");
+  var results = quizStudy.querySelector(".quiz__results");
+  var btnNext = quizStudy.querySelector(".quiz__button-next");
+  var quizQuestionsItems = questions.querySelectorAll(".quiz__questions-item");
+  var questionCount = 0;
+  quizStudy.addEventListener("change", function () {
+    handleQuestion(questionCount);
+  });
+  btnNext.addEventListener("click", function () {
+    questionCount++;
+    quizDisplay(questionCount);
   });
 }

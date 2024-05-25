@@ -1,0 +1,62 @@
+.quiz
+
+  #quiz-study
+    padding-bottom: 120px
+    @include mobile
+      padding-bottom: 50px
+
+  &-questions-item
+    display: flex
+    flex-direction: column
+    align-items: center
+  &-questions-item__question
+    font-size: 36px
+    font-weight: 500
+    margin-bottom: 64px
+    @include mobile
+      font-size: 25px
+      font-weight: 800
+      margin-bottom: 40px
+  &-questions-item__answers
+    max-width: 450px
+    width: 100%
+    display: grid
+    gap: 24px
+    input[type="radio"]
+      display: none
+      & + span
+        min-width: 30px
+        width: 30px
+        aspect-ratio: 1 / 1
+        border: 4px solid $secondary
+      &:checked
+        & + span
+          background-image: url("../img/icons/quiz-check.svg")
+          background-size: 20px 17px
+          background-position: center
+          background-repeat: no-repeat
+    @include mobile
+      grid-template-columns: 1fr
+      gap: 12px
+
+    li
+      font-size: 18px
+      font-weight: 600
+      padding: 8px
+      border: 1px solid $text
+      min-width: 150px
+    label
+      display: flex
+      align-items: center
+      justify-content: space-between
+      gap: 32px
+
+
+.col-2
+  @media (min-width: $width-mobile)
+    grid-template-columns: repeat(2, auto)
+.col-3
+  @media (min-width: $width-mobile)
+    max-width: 550px
+    grid-template-columns: repeat(3, auto)
+

@@ -1,4 +1,4 @@
-const quizContact = document.querySelector(".quiz.quiz--contact");
+const quizContact = document.querySelector(".quiz.quiz-contact");
 
 if (quizContact) {
 
@@ -7,7 +7,7 @@ if (quizContact) {
   const submitBtn = document.querySelector(".quiz__contact-form-submit");
   const inputs = quizContact.querySelectorAll("input:required");
 
-  function successForm () {
+  function successFormContact () {
     quizBody.classList.add("js-hidden");
 
     setTimeout(() => {
@@ -40,7 +40,6 @@ if (quizContact) {
   };
 
 
-
   contactForm.addEventListener("submit", (evt) => {
     evt.preventDefault();
     const data = new FormData(contactForm);
@@ -50,7 +49,7 @@ if (quizContact) {
     postData(url, data).then(response => {
       if (response.status < 300) {
         console.log("Форма успешно отправлена");
-        successForm();
+        successFormContact();
       } else {
         console.log("Ошибка при отправке формы");
       }

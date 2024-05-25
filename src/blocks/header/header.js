@@ -23,10 +23,6 @@ function mobileNav () {
     }
   });
 
-  // window.onscroll = function () {
-  //   header.classList.toggle('js-scroll', window.scrollY > 1);
-  // };
-
   navLinks.forEach(navLink => {
     navLink.addEventListener("click", closeMenu);
   });

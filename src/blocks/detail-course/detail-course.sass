@@ -28,7 +28,7 @@
     gap: 24px
     color: #000
     overflow: hidden
-    animation: transitionIn 0.75s
+    animation: transitionIn 0.3s
     @include tablet
       grid-row: 4 / 5
       grid-column: 1 / -1
@@ -57,6 +57,12 @@
     @include mobile
       height: 180px
 
-  .table-footnote
-    font-size: 15px
+
+  small
+    font-weight: 400
+
+  .table-footnote + .table-footnote
+    margin-top: 2px
+
+  .table-footnote.right
     text-align: right

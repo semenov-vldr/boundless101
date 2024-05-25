@@ -1,0 +1,33 @@
+.quiz
+  margin-top: 60px
+  @include mobile
+    margin-top: 52px
+
+  &__container
+    background-image: url("../img/decor/bg-net.svg")
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    min-height: 50vh
+
+  &__body.js-hidden
+    display: none
+  &__body.js-hidden ~ .quiz__success
+    display: block
+
+  &__title
+    font-size: 36px
+    text-align: center
+    color: $text-dark
+    font-weight: 500
+    @include mobile
+      font-size: 25px
+      font-weight: 800
+
+  &__button
+    grid-column: 1 / -1
+    margin: 32px auto 0
+    width: 100%
+    max-width: 300px
+  &__button.quiz__button-next
+    margin: 64px auto 0

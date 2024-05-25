@@ -1,5 +1,15 @@
 @import "containers"
 
+.fs-8
+  font-size: 8px
+.fs-9
+  font-size: 9px
+.fs-10
+  font-size: 10px
+.fs-15
+  font-size: 15px
+
+
 .hidden
   display: none !important
 
@@ -53,6 +63,26 @@ section
     background-color: $secondary
     &:hover
       box-shadow: rgba(0, 0, 0, 1) 4px 4px 0 0
+
+  &.arrow
+    gap: 12px
+    max-width: 300px
+    color: $text-dark
+    &::after
+      content: ""
+      background-image: url("../img/icons/arrow-right-btn.svg")
+      width: 20px
+      height: 20px
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+    &:disabled
+      background-color: #E7E7E7
+      color: $white
+      pointer-events: none
+      &::after
+        background-image: url("../img/icons/arrow-right-btn-white.svg")
+
 
 
 .mobile-hidden

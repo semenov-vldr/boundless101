@@ -14,15 +14,11 @@ header.header
                 li.header-nav__item
                     a.header-nav__link(href='contact-us.html') Contact Us
 
-            button.header__profile.desktop-hidden
+            button.header__profile.mobile-visible
                 span Wilson W
                 img(src="./assets/img/icons/account-avatar.svg")
 
         button.header__profile.mobile-hidden
             img(src="./assets/img/icons/account-avatar.svg")
 
-
-        button(type="button").header__burger
-            span.header__burger-line.header__burger-line-1
-            span.header__burger-line.header__burger-line-2
-            span.header__burger-line.header__burger-line-3
+        include header-burger

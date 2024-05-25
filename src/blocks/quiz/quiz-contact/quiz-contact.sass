@@ -1,28 +1,4 @@
 .quiz
-  margin-top: 60px
-  @include mobile
-    margin-top: 52px
-
-  &__container
-    background-image: url("../img/decor/bg-net.svg")
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-    min-height: 50vh
-
-  &__body.js-hidden
-    display: none
-
-  &__body.js-hidden ~ .quiz__success
-    display: block
-
-  &__title
-    font-size: 36px
-    text-align: center
-    color: $text-dark
-    @include mobile
-      font-size: 25px
-      font-weight: 800
 
   &__contact-form
     margin: 90px auto 0
@@ -35,32 +11,6 @@
     @include mobile
       grid-template-columns: 1fr
       margin: 42px auto 0
-
-    &-submit
-      position: relative
-      grid-column: 1 / -1
-      display: flex
-      align-items: center
-      gap: 12px
-      margin: 32px auto 0
-      width: 100%
-      max-width: 300px
-      color: $text-dark
-      &::after
-        content: ""
-        background-image: url("../img/icons/arrow-right-btn.svg")
-        width: 20px
-        height: 20px
-        background-size: cover
-        background-position: center
-        background-repeat: no-repeat
-
-      &:disabled
-        background-color: #E7E7E7
-        color: $white
-        pointer-events: none
-        &::after
-          background-image: url("../img/icons/arrow-right-btn-white.svg")
 
   &__success
     display: none
@@ -78,5 +28,3 @@
       width: 400px
       @include mobile
         width: 270px
-
-

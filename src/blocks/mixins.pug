@@ -3,3 +3,9 @@ mixin select-item(value, name)
         label
             span=value
             input(type='radio', name=name value=value)
+
+mixin quizAnswer(label, name)
+    li
+        label= label
+            input(type='radio', name= name, value= label)
+            span

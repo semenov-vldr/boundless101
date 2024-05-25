@@ -1,0 +1,48 @@
+//  Quiz
+form#quiz-study(action="")
+    //  Questions
+    .quiz__questions
+
+        //  Question 1 -----------------
+        fieldset.quiz__questions-item.quiz-questions-item
+            .quiz-questions-item__question 1. What would you like to do?
+            //  Answers
+            ul.quiz-questions-item__answers
+                +quizAnswer("Learn English online", "like to do")
+                +quizAnswer("Study English in USA", "like to do")
+                +quizAnswer("Pursue a certificate or degree program in USA", "like to do")
+
+        //  Question 2 -----------------
+        fieldset.quiz__questions-item.quiz-questions-item.hidden
+            .quiz-questions-item__question 2. Do you have a US visa?
+            //  Answers
+            ul.quiz-questions-item__answers.col-2
+                +quizAnswer("Yes", "US visa")
+                +quizAnswer("No", "US visa")
+
+        //  Question 3 -----------------
+        fieldset.quiz__questions-item.quiz-questions-item.hidden
+            .quiz-questions-item__question 3. What’s your current education level?
+            //  Answers
+            ul.quiz-questions-item__answers
+                +quizAnswer("High school graduate", "Current education level")
+                +quizAnswer("Bachelor degree", "Current education level")
+                +quizAnswer("Masters degree", "Current education level")
+
+        //  Question 4 -----------------
+        fieldset.quiz__questions-item.quiz-questions-item.hidden
+            .quiz-questions-item__question 4. What’s your English level?
+            //  Answers
+            ul.quiz-questions-item__answers.col-3
+                +quizAnswer("Don’t speak", "English level")
+                +quizAnswer("A1-A2", "English level")
+                +quizAnswer("A2-B1", "English level")
+                +quizAnswer("B1-B2", "English level")
+                +quizAnswer("B2-C1", "English level")
+                +quizAnswer("C1-C2", "English level")
+                +quizAnswer("Native Speaker", "English level")
+
+    .quiz__results.hidden Result
+
+    //  Button Next Step
+    button.quiz__button-next.quiz__button.button.button--primary.arrow(type='button', disabled) Next step

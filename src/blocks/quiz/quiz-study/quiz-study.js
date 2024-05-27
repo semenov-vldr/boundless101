@@ -4,7 +4,7 @@ const quizStudy = document.getElementById("quiz-study");
 if (quizStudy) {
 
   const questions = quizStudy.querySelector(".quiz__questions");
-  const results = quizStudy.querySelector(".quiz__results");
+  const results = document.querySelector(".quiz__results");
   const btnNext = quizStudy.querySelector(".quiz__button-next");
   const quizQuestionsItems = questions.querySelectorAll(".quiz__questions-item");
 

@@ -1,0 +1,73 @@
+section.matched-courses
+
+    h2.matched-courses__title Matched courses
+
+    .matched-courses__body
+
+        .matched-courses__search.courses-search
+            h2.courses-search__caption Search school
+
+            .custom-select.courses-search__select
+                button.select-button(type="button") What do you want to learn
+                ul.select-dropdown
+                    +select-item("Business Certificate Program", "course")
+                    +select-item("Computer Science", "course")
+                    +select-item("Healthcare", "course")
+                    +select-item("Finance", "course")
+
+
+            .custom-select.courses-search__select
+                button.select-button(type="button") Where do you want to study
+                ul.select-dropdown
+                    +select-item("Fort Lauderdale", "location")
+                    +select-item("Boston", "location")
+                    +select-item("San Francisco", "location")
+
+
+            .courses-search__group
+                span.courses-search__group-caption Calculation of cost
+                .custom-select.courses-search__select
+                    button.select-button(type="button") How long do you want to study?
+                    ul.select-dropdown
+                        +select-item("Not sure yet", "duration")
+                        +select-item("May 2024", "duration")
+                        +select-item("June 2024", "duration")
+                        +select-item("July 2024", "duration")
+
+            .courses-search__group
+                span.courses-search__group-caption Special features
+                fieldset
+                    label.courses-search__checkbox Value for money
+                        input(type="checkbox" name="features" value="Value for money")
+                        span
+                    label.courses-search__checkbox Average age 30+
+                        input(type="checkbox" name="features" value="Average age 30+")
+                        span
+                    label.courses-search__checkbox Located in the city center
+                        input(type="checkbox" name="features" value="Located in the city center")
+                        span
+
+
+        .matched-courses__sort.courses-sort
+            span.courses-sort__caption Sort by:
+            ul.courses-sort__list
+                li.courses-sort__item.js-active our recommendations
+                li.courses-sort__item best reviewed
+                li.courses-sort__item price
+
+
+
+        .matched-courses__cards.courses-cards
+
+            article.courses-cards-item.courses-card
+                img.courses-card__img(src="./assets/img/photos/boston/04.jpg")
+                .courses-card__content
+                    .courses-card__head
+                        h2.courses-card__title Fort Lauderdale, 5+
+                        h3.courses-card__subtitle Computer Systems Institute
+                    span.courses-card__rating ★★★★★
+                    span.courses-card__location Florida, USA
+                    span.courses-card__price From <b>$285</b> for 1 week
+                    span.courses-card__age from 13 years
+                    a.button.button--primary(href="") Choose a course
+

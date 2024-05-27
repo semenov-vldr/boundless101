@@ -174,6 +174,20 @@ function hideLoader() {
 window.addEventListener('load', hideLoader);
 "use strict";
 
+var matchedCourses = document.querySelector(".matched-courses");
+if (matchedCourses) {
+  var sortItems = matchedCourses.querySelectorAll(".courses-sort__item");
+  sortItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+      sortItems.forEach(function (i) {
+        return i.classList.remove("js-active");
+      });
+      item.classList.add("js-active");
+    });
+  });
+}
+"use strict";
+
 var popups = {
   login: {
     classPopup: ".popup-login",
@@ -393,7 +407,7 @@ if (quizStudy) {
     btnNext.disabled = !isSelected;
   };
   var questions = quizStudy.querySelector(".quiz__questions");
-  var results = quizStudy.querySelector(".quiz__results");
+  var results = document.querySelector(".quiz__results");
   var btnNext = quizStudy.querySelector(".quiz__button-next");
   var quizQuestionsItems = questions.querySelectorAll(".quiz__questions-item");
   var questionCount = 0;

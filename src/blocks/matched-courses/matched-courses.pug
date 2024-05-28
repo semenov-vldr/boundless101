@@ -60,14 +60,40 @@ section.matched-courses
         .matched-courses__cards.courses-cards
 
             article.courses-cards-item.courses-card
-                img.courses-card__img(src="./assets/img/photos/boston/04.jpg")
+                .courses-card__img-wrap
+                    img(src="./assets/img/photos/boston/04.jpg")
                 .courses-card__content
                     .courses-card__head
                         h2.courses-card__title Fort Lauderdale, 5+
                         h3.courses-card__subtitle Computer Systems Institute
                     span.courses-card__rating ★★★★★
                     span.courses-card__location Florida, USA
-                    span.courses-card__price From <b>$285</b> for 1 week
+                    span.courses-card__price From $285 <br> for 1 week
                     span.courses-card__age from 13 years
-                    a.button.button--primary(href="") Choose a course
+                    a.button.button--primary.courses-card__button(href="") Choose a course
+
+
+            article.courses-cards-item.courses-card
+                .courses-card__img-wrap
+                    img(src="./assets/img/photos/boston/04.jpg")
+                .courses-card__content
+                    .courses-card__head
+                        h2.courses-card__title Boston
+                    span.courses-card__location Florida, USA
+                    span.courses-card__rating ★★★★★
+                    span.courses-card__price From $215 <br> for 1 week
+                    span.courses-card__age 16 years old and above
+                    a.button.button--primary.courses-card__button(href="") Choose a course
+
+
+            article.courses-cards-item.courses-card
+                .courses-card__img-wrap
+                    img(src="./assets/img/photos/boston/04.jpg")
+                .courses-card__content
+                    .courses-card__head
+                        h2.courses-card__title Miami Brickell
+                    span.courses-card__location Florida, USA
+                    span.courses-card__price From $915 <br> for 2 weeks
+                    span.courses-card__age 16 years old and above
+                    a.button.button--primary.courses-card__button(href="") Choose a course
 

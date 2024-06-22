@@ -12,4 +12,25 @@ if (matchedCourses) {
   });
 
 
+
+  // Rating
+
+  const ratings = document.querySelectorAll(".rating");
+
+  if (ratings) {
+
+    ratings.forEach(rating => {
+      const dataRating = +rating.dataset.rating;
+      const ratingStarSrc = rating.dataset.starSrc;
+
+      for(let i = 1; i <= dataRating; i++) {
+        const tagImg = document.createElement("img");
+        tagImg.src= ratingStarSrc;
+        rating.appendChild(tagImg);
+      }
+    });
+
+  }
+
+
 }

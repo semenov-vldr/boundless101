@@ -185,6 +185,21 @@ if (matchedCourses) {
       item.classList.add("js-active");
     });
   });
+
+  // Rating
+
+  var ratings = document.querySelectorAll(".rating");
+  if (ratings) {
+    ratings.forEach(function (rating) {
+      var dataRating = +rating.dataset.rating;
+      var ratingStarSrc = rating.dataset.starSrc;
+      for (var i = 1; i <= dataRating; i++) {
+        var tagImg = document.createElement("img");
+        tagImg.src = ratingStarSrc;
+        rating.appendChild(tagImg);
+      }
+    });
+  }
 }
 "use strict";
 

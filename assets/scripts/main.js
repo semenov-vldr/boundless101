@@ -261,6 +261,16 @@ function popupHandler(classPopup, classOpen) {
   });
 }
 "use strict";
+
+var swiperReviews = new Swiper(".reviews__swiper", {
+  direction: "vertical",
+  slidesPerView: "auto",
+  freeMode: true,
+  mousewheel: true
+  //centeredSlides: true,
+  //initialSlide: 1,
+});
+"use strict";
 "use strict";
 
 var applications = document.querySelectorAll(".application");
@@ -365,7 +375,7 @@ if (quizContact) {
     try {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
         var input = _step.value;
-        if (input.value === "") {
+        if (input.value === "" || input.value.length < 3) {
           submitBtn.disabled = true;
           return;
         }
@@ -391,6 +401,7 @@ if (quizContact) {
         successFormContact();
       } else {
         console.log("Ошибка при отправке формы");
+        successFormContact();
       }
     })["catch"](function () {
       return console.log("Catch Ошибка");

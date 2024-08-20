@@ -1,0 +1,95 @@
+.reviews
+  background-color: #8E8CBE
+  min-height: 90vh
+
+
+  &__container
+    display: grid
+    grid-template-columns: 0.4fr 0.6fr
+    justify-content: space-between
+    gap: 64px
+
+  // --- Content ---
+
+  &__content
+    padding: 50px 0
+    display: flex
+    flex-direction: column
+    gap: 32px
+
+  &__title
+    @include fontSize(25, 64)
+    color: $text-dark
+    font-weight: 500
+
+  &__quote
+    @include fontSize(17, 25)
+    color: $text-dark
+
+
+  // --- List ---
+
+  &__swiper
+    max-height: 90vh
+    padding: 12px 40px 12px 0
+    //overflow-x: visible
+    overflow-y: hidden
+
+  &__list
+    display: flex
+    flex-direction: column
+    gap: 32px
+
+
+  &-item
+    background-color: #E8F3FF
+    padding: 20px 30px
+    box-shadow: 10px 10px 0 0 #000
+    display: flex
+    flex-direction: column
+    gap: 16px
+    user-select: none
+    height: auto
+    cursor: pointer
+
+    &__header
+      display: flex
+      gap: 20px
+
+    &__name
+      align-self: flex-end
+
+    &__userpic
+      box-shadow: 3px 3px 0 0 #1E1E1E
+
+    &__rating
+      position: relative
+      margin-left: auto
+      font-size: 24px
+      color: orangered
+      background-color: $white
+      padding: 8px 16px
+      height: min-content
+      box-shadow: 8px 8px 0 0 #000
+      display: flex
+      gap: 8px
+      align-items: center
+      transform: translateX(30%)
+      img
+        width: 25px
+      &::before
+        content: ""
+        position: absolute
+        bottom: -5px
+        left: 20%
+        width: 10px
+        height: 10px
+        background-color: $white
+        box-shadow: 8px 4px 0 0 #000
+        rotate: 45deg
+
+    &__text
+      font-size: 18px
+      line-height: 1.6
+      @media (max-width: $width-mobile)
+        font-size: 14px

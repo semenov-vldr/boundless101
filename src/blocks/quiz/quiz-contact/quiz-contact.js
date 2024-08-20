@@ -18,7 +18,7 @@ if (quizContact) {
 
   const handleChange = () => {
     for	(const input of inputs) {
-      if (input.value === "") {
+      if (input.value === "" || input.value.length < 3) {
         submitBtn.disabled = true;
         return;
       }
@@ -52,6 +52,7 @@ if (quizContact) {
         successFormContact();
       } else {
         console.log("Ошибка при отправке формы");
+        successFormContact();
       }
     }).catch(() => console.log("Catch Ошибка"));
   });

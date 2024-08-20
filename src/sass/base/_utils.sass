@@ -61,10 +61,18 @@ section
     color: $text-dark
     &:hover
       box-shadow: rgba(0, 0, 0, 1) 4px 4px 0 0
+    &:disabled
+      background-color: #E7E7E7
+      pointer-events: none
+      color: #fff
   &.button--secondary
     background-color: $secondary
     &:hover
       box-shadow: rgba(0, 0, 0, 1) 4px 4px 0 0
+  &.button--yellow
+    background-color: #E9F4A6
+    box-shadow: rgba(0, 0, 0, 1) 4px 4px 0 0
+
 
   &.arrow
     gap: 12px

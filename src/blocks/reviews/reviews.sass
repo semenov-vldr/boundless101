@@ -1,10 +1,12 @@
 .reviews
-  background-color: #8E8CBE
+  //background-color: #8E8CBE
+  background-image: url("../img/reviews/bg.jpg")
+  background-position: center
+  background-size: cover
   @media (min-width: 1000px)
     min-height: 90vh
   @media (max-width: 1000px)
     padding-bottom: 70px
-
 
 
   &__container
@@ -77,6 +79,8 @@
   &__btn
     width: 100%
     max-width: 300px
+    @media (max-width: 1000px)
+      margin: 40px auto 0
 
 
   // --- List ---
@@ -107,11 +111,6 @@
         height: 10px
       @media (min-width: 1000px)
         display: none
-
-
-  //&__list
-  //  display: flex
-  //  gap: 32px
 
 
   &-item

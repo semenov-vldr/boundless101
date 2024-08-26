@@ -81,6 +81,8 @@
     max-width: 300px
     @media (max-width: 1000px)
       margin: 40px auto 0
+    &:hover
+      background-color: $yellow
 
 
   // --- List ---
@@ -127,8 +129,9 @@
     transition: $transition
     @include mobile
       padding: 14px 14px 18px
-    &.swiper-slide-active:hover
-      transform: scale(1.1)
+    @media (min-width: 1000px)
+      &.swiper-slide-active:hover
+        transform: scale(1.1)
 
     &__header
       position: relative

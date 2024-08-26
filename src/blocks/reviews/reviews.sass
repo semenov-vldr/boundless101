@@ -89,7 +89,8 @@
     padding: 12px 30px 12px 0
     @media (min-width: 1000px)
       max-height: 90vh
-      padding-right: 40px
+      padding-right: 70px
+      padding-left: 30px
       overflow-y: hidden
       max-width: 600px
     @media (max-width: 1000px)
@@ -123,8 +124,11 @@
     user-select: none
     height: auto
     cursor: pointer
+    transition: $transition
     @include mobile
       padding: 14px 14px 18px
+    &:hover
+      transform: scale(1.1)
 
     &__header
       position: relative

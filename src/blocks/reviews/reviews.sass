@@ -4,7 +4,7 @@
   background-position: center
   background-size: cover
   @media (min-width: 1000px)
-    min-height: 90vh
+    min-height: calc(100vh - 250px)
   @media (max-width: 1000px)
     padding-bottom: 70px
 
@@ -90,7 +90,7 @@
   &__swiper
     padding: 12px 30px 12px 0
     @media (min-width: 1000px)
-      max-height: 90vh
+      max-height: calc(100vh - 250px)
       padding-right: 70px
       padding-left: 30px
       overflow-y: hidden
@@ -130,7 +130,7 @@
     @include mobile
       padding: 14px 14px 18px
     @media (min-width: 1000px)
-      &.swiper-slide-active:hover
+      &:hover
         transform: scale(1.1)
 
     &__header
